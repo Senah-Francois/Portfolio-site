@@ -1,0 +1,152 @@
+/* styles.css */
+/* Main Navigation (Visible on larger screens) */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+/* Three-dot menu */
+.menu-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-icon:hover{
+    transform: translateY(10%); /* Pop-up effect on hover */
+    box-shadow: 0 20px 100px rgba(122, 29, 29, 0.5); /* Enhance shadow on hover */
+}
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-top: 60px;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar ul li:hover {
+    background-color: #555;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+}
+
+/* Show three-dot menu on smaller screens */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Hide the main navigation */
+    }
+    .menu-icon {
+        display: block; /* Show the three-dot menu */
+    }
+
+    .sidebar.active {
+        left: 0; /* Show the sidebar */
+    }
+
+    .main-content.active {
+        margin-left: 250px; /* Adjust the main content */
+    }
+}
+
+/* Styles for languages skill */
+.education h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+.language {
+    margin-bottom: 50px;
+}
+
+.progress-bar {
+    width: 70%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 12px;
+
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.kh { background: #251f56; width: 100%; } /* Blue for Khmer */
+.jap { background: #4f4383; width: 53%; } /* Red for Japan */
+.eng { background: #322f69; width: 75%; } /* Blue for English */
+.fr { background: #5c6294; width: 40%}
+
+
+/* About Me Content (Text) */
+.edu-content {
+    flex: 1;
+    max-width: 70%;  
+}
+/* About Me Image */
+.edu-img {
+    width: 60%; /* Adjust image size */
+    max-width: 300px; /* Prevents it from getting too large */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.edu-img:hover {
+    transform: translateY(-5px); /* Pop-up effect on hover */
+    box-shadow: 0 0px 0px rgba(122, 29, 29, 0.5); /* Enhance shadow on hover */
+}
+/* Education Section */
+
+.education h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.5;
+}
+.education li, p{
+    font-size: var(--font-size-base);
+}
+
+/*education section*/
+.education {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    width: 100%;
+    
+}
